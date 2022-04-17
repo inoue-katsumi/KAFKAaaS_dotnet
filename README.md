@@ -2,55 +2,34 @@
 
 KAFKAaaS_dotnet is dotnet implementation sample of Kafka producer client. 
 This client published Youtube search result to Kafka topic as JSON.
+Tested on Windows10 WSL2(Windows Subsystem for Linux ver.2) env.
 
 ## Usage:
 
 ```bash
-
+dotnet.exe build producer_stdin.csproj
+export topic_name=youtube_json_x
+python3 youtube_list.py |
+sed  "s/ '/ \"/g;s/{'/{\"/g;s/'}/\"}/g;s/':/\":/g;s/',/\",/g" |
+bin/Debug/netcoreapp6.0/producer_youtube_search.exe $(wslpath -w getting-started.properties) \
+  1 ${topic_name}
 ```
-
-## bin:
-
-
-## client_secret_676471374476-7akeh5brv0mlabkg35dva9hkt2ku7mh6.apps.googleusercontent.com.json:
-
-
-## consumer.cs:
-
-
-## consumer.csproj:
-
-
-## example.py:
-
 
 ## getting-started.properties:
 
-
-## obj:
-
-
-## producer.cs:
-
-
-## producer.csproj:
-
-
-## producer_stdin.cs:
-
-
-## producer_stdin.csproj:
-
+Edit this file as necessary. Originally from Confluent.
 
 ## producer_youtube_search.cs:
 
+C# source code for Kafka sample producer.
 
 ## producer_youtube_search.csproj:
 
-
-## YOUR_CLIENT_SECRET_FILE.json:
-
+C# project file.
 
 ## youtube_list.py:
 
-
+Searchs youtube with simple keyword and find just 1 recent video.
+Write out 2 JSON lines. 
+1st line: videoid
+2nd line: description
