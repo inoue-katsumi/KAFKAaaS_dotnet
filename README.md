@@ -1,7 +1,9 @@
 # KAFKAaaS_dotnet
 
 KAFKAaaS_dotnet is dotnet implementation sample of Kafka producer client. 
+
 This client published Youtube search result to Kafka topic as JSON.
+
 Tested on Windows10 WSL2(Windows Subsystem for Linux ver.2) env.
 
 ## Usage:
@@ -30,6 +32,9 @@ C# project file.
 ## youtube_list.py:
 
 Searchs youtube with simple keyword and find just 1 recent video.
+
 Write out 2 JSON lines. 
+
 1st line: videoid
+
 2nd line: description
