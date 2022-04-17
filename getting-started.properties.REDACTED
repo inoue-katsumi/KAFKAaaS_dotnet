@@ -1,0 +1,5 @@
+bootstrap.servers=kafka-aaaaaaa-bbbbbbb-cccc.aivencloud.com:21298
+security.protocol=SASL_SSL
+sasl.mechanisms=PLAIN
+sasl.username=USERNAME
+sasl.password=PASSWORD
