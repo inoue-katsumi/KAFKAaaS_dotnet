@@ -25,6 +25,12 @@ Edit this file as necessary. Originally from Confluent.
 
 C# source code for Kafka sample producer.
 
+Reads 2 lines from STDIN and publishes this pair as 1 Kafka message.
+
+1st line: Key
+
+2nd line: Value
+
 ## producer_youtube_search.csproj:
 
 C# project file.
